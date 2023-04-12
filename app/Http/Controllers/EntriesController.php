@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Entry;
+use App\Models\EntrySkill;
+use App\Models\Skill;
 
 class EntriesController extends Controller
 {
@@ -16,7 +18,9 @@ class EntriesController extends Controller
 
     public function addForm()
     {
-        return view('entries.add');
+        return view('entries.add', [
+            'skills' => Skill::all()
+        ]);
     }
     
     public function add()
@@ -25,15 +29,23 @@ class EntriesController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'content' => 'required',
-            'learned_at' => 'required'
+            'learned_at' => 'required',
+            'skills' => 'nullable',
         ]);
 
         $entry = new Entry();
         $entry->title = $attributes['title'];
-        $project->content = $attributes['content'];
+        $entry->content = $attributes['content'];
         $entry->learned_at = $attributes['learned_at'];
-        // $project->user_id = Auth::user()->id;
         $entry->save();
+
+        if(isset($attributes['skills']))
+        {
+            foreach($attributes['skills'] as $skill);
+            {
+                $entry->manySkills()->attach($skill);
+            }
+        }
 
         return redirect('/console/entries/list')
             ->with('message', 'Entry has been added!');
