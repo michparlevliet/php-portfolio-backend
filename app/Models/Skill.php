@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Entry extends Model
+class Skill extends Model
 {
     use HasFactory;
 
-    public function entrySkills()
+    public function entries(): HasMany
     {
-        return $this->belongsToMany(Skill::class);
+        return $this->hasMany(Entry::class);
     }
 }
