@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Type;
 use App\Models\User;
+use App\Models\Experience;
 use App\Models\Project;
 
 /*
@@ -26,6 +27,13 @@ Route::get('/types', function(){
 
     $types = Type::orderBy('title')->get();
     return $types;
+
+});
+
+Route::get('/experiences', function(){
+
+    $experiences = Experience::orderBy('ended_at')->get();
+    return $experiences;
 
 });
 

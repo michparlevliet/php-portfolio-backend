@@ -36,7 +36,7 @@ header i{
     border-radius: 10px;
     background-color: rgb(255, 85, 85);
     display: inline-block;
-    width: 250px;
+    width: 350px;
     height: 70px;
     margin: 1em;
     padding: 2em;
@@ -102,6 +102,12 @@ table a:hover{
 }
 .w3-padding form{
     background-color:rgb(207, 207, 207);
+}
+.w3-padding span {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 1em;
+    font-style: italic;
+    background-color: rgb(255, 231, 235);
 }
 
 .w3-margin-bottom{
