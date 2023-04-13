@@ -11,6 +11,7 @@
             <th>Title</th>
             <th>Date</th>
             <th></th>
+            <th></th>
         </tr>
         <?php foreach($entries as $entry): ?>
             <tr>

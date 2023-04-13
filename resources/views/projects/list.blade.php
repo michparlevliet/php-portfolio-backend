@@ -6,7 +6,7 @@
 
     <h2>Manage Projects</h2>
 
-    <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
+    <table class="w3-table">
         <tr class="w3-red">
             <th></th>
             <th>Title</th>
