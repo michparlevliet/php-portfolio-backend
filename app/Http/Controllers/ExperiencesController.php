@@ -43,7 +43,7 @@ class ExperiencesController extends Controller
 
         if(isset($attributes['skills']))
         {
-            foreach($attributes['skills'] as $skill);
+            foreach($attributes['skills'] as $skill)
             {
                 $experience->experienceSkills()->attach($skill);
             }
@@ -79,7 +79,7 @@ class ExperiencesController extends Controller
 
         if(isset($attributes['skills']))
         {
-            foreach($attributes['skills'] as $skill);
+            foreach($attributes['skills'] as $skill)
             {
                 $experience->experienceSkills()->attach($skill);
             }

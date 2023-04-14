@@ -16,17 +16,10 @@ class ProjectsController extends Controller
 
     public function list()
     {
-        // if(isset($attributes['skills']))
-        // {
-        //     foreach($attributes['skills'] as $skill);
-        //     {
-        //         $project->projectSkills()->attach($skill);
-        //     }
-        // }
-
+    
         return view('projects.list', [
             'projects' => Project::all(),
-            // 'skills' => ProjectSkill::all()
+            // 'skills' => Skill::all()
         ]);
     }
 
@@ -62,7 +55,7 @@ class ProjectsController extends Controller
 
         if(isset($attributes['skills']))
         {
-            foreach($attributes['skills'] as $skill);
+            foreach($attributes['skills'] as $skill)
             {
                 $project->projectSkills()->attach($skill);
             }
@@ -106,7 +99,7 @@ class ProjectsController extends Controller
 
         if(isset($attributes['skills']))
         {
-            foreach($attributes['skills'] as $skill);
+            foreach($attributes['skills'] as $skill)
             {
                 $project->projectSkills()->attach($skill);
             }
