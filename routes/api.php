@@ -23,6 +23,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/skills', function(){
+
+    $skills = Type::orderBy('title')->get();
+    return $skills;
+
+});
+
 Route::get('/types', function(){
 
     $types = Type::orderBy('title')->get();
