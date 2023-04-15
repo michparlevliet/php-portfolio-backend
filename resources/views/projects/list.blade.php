@@ -6,12 +6,13 @@
 
     <h2>Manage Projects</h2>
 
-    <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
+    <table class="w3-table">
         <tr class="w3-red">
             <th></th>
             <th>Title</th>
             <th>Slug</th>
             <th>Type</th>
+            <th>Skills</th>
             <th>Created</th>
             <th></th>
             <th></th>
@@ -31,6 +32,7 @@
                     </a>
                 </td>
                 <td>{{$project->type->title}}</td>
+                <td>{{$project->skill}}</td>
                 <td>{{$project->created_at->format('M j, Y')}}</td>
                 <td><a href="/console/projects/image/{{$project->id}}">Image</a></td>
                 <td><a href="/console/projects/edit/{{$project->id}}">Edit</a></td>

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,500&family=Tilt+Prism&display=swap');
+
+html {
+    box-sizing:border-box; 
+    font-family: 'Raleway', sans-serif !important;
+    font:400 1em;
+}
+  *, *::before, *::after {
+    box-sizing:inherit; 
+}
+body{
+    padding:1em;
+    max-width:100%;
+    background-color: rgb(243, 243, 243);
+}
+.w3-text-red{
+    font-family: 'Tilt Prism', cursive;
+    font-size: 5em;
+    font-weight: 500;
+    color:rgb(255, 85, 85);
+    width: 300px;
+}
+header a, header a:visited{
+    color:brown;
+    text-decoration: none;
+    padding: 0.5em;
+}
+header a:hover {
+    color:rgb(255, 85, 85);
+}
+header i{
+    padding-left: 0.2em;
+}
+.btn {
+    color:white;
+    border-radius: 10px;
+    background-color: rgb(255, 85, 85);
+    display: inline-block;
+    width: 350px;
+    height: 70px;
+    margin: 1em;
+    padding: 2em;
+    box-sizing: border-box;
+    text-align: center;
+    align-items:center;
+    border: none;
+    box-shadow: 6px 6px 2px 1px rgba(112, 30, 255, 0.2);
+}
+.btn:hover{
+    background-color: rgb(153, 63, 255);
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+}
+.btn i{
+    padding-left: 0.3em;
+}
+.w3-red.w3-center.w3-padding{
+    text-align: center;
+    font-style: italic;
+    background-color: rgb(255, 85, 85);
+    color: white;
+    width: 100%;
+    padding: 1em 8em;
+}
+.w3-padding h2{
+    color: brown;
+    padding-left: 1em;
+}
+.w3-padding th{
+    background-color: brown;
+    color:white;
+    height: 2.5em;
+}
+.w3-padding table{
+    width: 100%;
+    padding:1.5em;
+}
+.w3-table td{
+    padding: 1em;
+    border-bottom: 1px solid grey !important;
+}
+table a, table a:visited{
+    color:brown;
+    text-decoration: none;
+    font-style: italic;
+}
+table a:hover{
+    color: rgb(255, 85, 85);
+}
+.w3-button.w3-green,.submit_btn{
+    background-color: rgb(255, 85, 85);
+    color:white;
+    margin:1em;
+    padding:0.5em 1em;
+    text-decoration: none;
+    box-shadow: 5px 5px 1px 1px rgba(65, 65, 65, 0.2);
+}
+.w3-button.w3-green:hover,.submit_btn:hover{
+    background-color: rgb(153, 63, 255);
+}
+.w3-padding form{
+    background-color:rgb(207, 207, 207);
+}
+.w3-padding span {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 1em;
+    font-style: italic;
+    background-color: rgb(255, 231, 235);
+}
+
+.w3-margin-bottom{
+    padding:1em;
+}
+
+
+
+
+@media screen and (max-width:480px) {
+    body {
+        text-align: center;
+    }
+    .menu{
+        width:95%;
+        display: flex;
+        flex-direction: column;
+    }
+    .w3-padding{
+        max-width:95%;
+    }
+    .w3-padding table{
+        margin-bottom: 2em;
+        max-width:95%;
+        padding:0;
+    }
+    .w3-padding form {
+        max-width:100%;
+    }
+    .w3-button.w3-green,.submit_btn{
+        margin-top:3em;
+        padding:1em 5em;
+    }
+
+}

@@ -9,8 +9,13 @@ class Skill extends Model
 {
     use HasFactory;
 
-    public function entries(): HasMany
+    public function experiences(): HasMany
     {
-        return $this->hasMany(Entry::class);
+        return $this->hasMany(Experience::class);
+    }
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
     }
 }
