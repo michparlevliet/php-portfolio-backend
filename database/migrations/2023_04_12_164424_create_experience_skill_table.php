@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('entry_skill', function (Blueprint $table) {
+        Schema::create('experience_skill', function (Blueprint $table) {
             $table->id();
             $table->foreignId('skill_id');
-            $table->foreignId('entry_id');
+            $table->foreignId('experience_id');
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('entry_skill');
+        Schema::dropIfExists('experience_skill');
     }
 };
