@@ -8,14 +8,18 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\ProjectSkill;
+use App\Models\Skill;
 
 class ProjectsController extends Controller
 {
 
     public function list()
     {
+    
         return view('projects.list', [
-            'projects' => Project::all()
+            'projects' => Project::all(),
+            // 'skills' => Skill::all()
         ]);
     }
 
@@ -23,6 +27,7 @@ class ProjectsController extends Controller
     {
         return view('projects.add', [
             'types' => Type::all(),
+            'skills' => Skill::all()
         ]);
     }
     
@@ -31,10 +36,12 @@ class ProjectsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'slug' => 'required|unique:projects|regex:/^[A-z\-]+$/',
+            'slug' => 'nullable',
+            // 'slug' => 'required|unique:projects|regex:/^[A-z\-]+$/',
             'url' => 'nullable|url',
             'content' => 'required',
-            'type_id' => 'required',
+            'type_id' => 'required', 
+            'skills' => 'nullable',
         ]);
 
         $project = new Project();
@@ -46,6 +53,14 @@ class ProjectsController extends Controller
         $project->user_id = Auth::user()->id;
         $project->save();
 
+        if(isset($attributes['skills']))
+        {
+            foreach($attributes['skills'] as $skill)
+            {
+                $project->projectSkills()->attach($skill);
+            }
+        }
+
         return redirect('/console/projects/list')
             ->with('message', 'Project has been added!');
     }
@@ -55,6 +70,7 @@ class ProjectsController extends Controller
         return view('projects.edit', [
             'project' => $project,
             'types' => Type::all(),
+            'skills' => Skill::all()
         ]);
     }
 
@@ -71,6 +87,7 @@ class ProjectsController extends Controller
             'url' => 'nullable|url',
             'content' => 'required',
             'type_id' => 'required',
+            'skills' => 'nullable',
         ]);
 
         $project->title = $attributes['title'];
@@ -79,6 +96,14 @@ class ProjectsController extends Controller
         $project->content = $attributes['content'];
         $project->type_id = $attributes['type_id'];
         $project->save();
+
+        if(isset($attributes['skills']))
+        {
+            foreach($attributes['skills'] as $skill)
+            {
+                $project->projectSkills()->attach($skill);
+            }
+        }
 
         return redirect('/console/projects/list')
             ->with('message', 'Project has been edited!');

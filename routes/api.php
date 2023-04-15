@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Type;
 use App\Models\User;
+use App\Models\Experience;
 use App\Models\Project;
 
 /*
@@ -22,10 +23,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/skills', function(){
+
+    $skills = Type::orderBy('title')->get();
+    return $skills;
+
+});
+
 Route::get('/types', function(){
 
     $types = Type::orderBy('title')->get();
     return $types;
+
+});
+
+Route::get('/experiences', function(){
+
+    $experiences = Experience::orderBy('ended_at')->get();
+    return $experiences;
 
 });
 
