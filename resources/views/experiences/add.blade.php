@@ -4,9 +4,9 @@
 
 <section class="w3-padding">
 
-    <h2>Add Entry</h2>
+    <h2>Add Experience</h2>
 
-    <form method="post" action="/console/entries/add" novalidate class="w3-margin-bottom">
+    <form method="post" action="/console/experiences/add" novalidate class="w3-margin-bottom">
 
         @csrf
 
@@ -29,12 +29,21 @@
             @endif
         </div>
         <div class="w3-margin-bottom">
-            <label for="learned_at">Date:</label>
+            <label for="learned_at">Start Date:</label>
             <input type="date" name="learned_at" id="learned_at" value="{{old('learned_at')}}" required>
             
             @if ($errors->first('learned_at'))
                 <br>
                 <span class="w3-text-red">{{$errors->first('learned_at')}}</span>
+            @endif
+        </div>
+        <div class="w3-margin-bottom">
+            <label for="ended_at">End Date:</label>
+            <input type="date" name="ended_at" id="ended_at" value="{{old('ended_at')}}" required>
+            
+            @if ($errors->first('ended_at'))
+                <br>
+                <span class="w3-text-red">{{$errors->first('ended_at')}}</span>
             @endif
         </div>
         <div class="w3-margin-bottom">
@@ -55,11 +64,11 @@
         </div>
       
 
-        <button type="submit" class="w3-button w3-green">Add Entry</button>
+        <button type="submit" class="w3-button w3-green">Add Experience</button>
 
     </form>
 
-    <a href="/console/entries/list">Back to Entries List</a>
+    <a href="/console/experiences/list">Back to Experiences List</a>
 
 </section>
 
