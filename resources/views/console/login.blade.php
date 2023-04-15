@@ -4,7 +4,7 @@
 
 <section class="w3-padding">
 
-    <form class="box" method="post" action="/console/login" novalidate>
+    <form method="post" action="/console/login" novalidate>
 
         @csrf
 
@@ -28,7 +28,7 @@
             @endif
         </div>
 
-        <button class="submit_btn" type="submit">Log In</button>
+        <button type="submit">Log In</button>
 
     </form>
 

@@ -4,12 +4,11 @@
 
 <section class="w3-padding">
 
-    <h2>Manage Skills</h2>
+    <h2>Manage Entry Skills</h2>
 
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-red">
             <th>Title</th>
-            <th></th>
             <th></th>
         </tr>
         <?php foreach($skills as $skill): ?>
