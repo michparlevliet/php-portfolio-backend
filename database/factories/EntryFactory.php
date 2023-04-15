@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Experience>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Entry>
  */
-class ExperienceFactory extends Factory
+class EntryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,7 +20,6 @@ class ExperienceFactory extends Factory
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph,
             'learned_at' => $this->faker->dateTimeThisMonth,
-            'ended_at' => $this->faker->dateTimeThisMonth,
         ];
     }
 }
