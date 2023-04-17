@@ -14,13 +14,18 @@ use App\Models\Skill;
 class ProjectsController extends Controller
 {
 
+
     public function list()
     {
-    
-        return view('projects.list', [
-            'projects' => Project::all(),
-            // 'skills' => Skill::all()
-        ]);
+        $skill = Skill::find(1);
+
+        foreach ($skill->projects as $project) {
+            return view('projects.list', [
+                'projects' => Project::all(),
+                'skills'=> Skill::all()
+            ]);
+        }
+        
     }
 
     public function addForm()
@@ -50,6 +55,7 @@ class ProjectsController extends Controller
         $project->url = $attributes['url'];
         $project->content = $attributes['content'];
         $project->type_id = $attributes['type_id'];
+        // $project->skill_id = $attributes['skill_id'];
         $project->user_id = Auth::user()->id;
         $project->save();
 
@@ -95,6 +101,7 @@ class ProjectsController extends Controller
         $project->url = $attributes['url'];
         $project->content = $attributes['content'];
         $project->type_id = $attributes['type_id'];
+        // $project->skill_id = $attributes['skill_id'];
         $project->save();
 
         if(isset($attributes['skills']))
