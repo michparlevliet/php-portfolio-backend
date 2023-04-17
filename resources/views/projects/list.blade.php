@@ -33,11 +33,11 @@
                 </td>
                 <td>{{$project->type->title}}</td>
                 <td>
-                    <ul>
+                    <!-- <ul>
                 @foreach ($skills as $skill)
                         <li>{{$skill->title}}
                 @endforeach
-                    <ul>
+                    <ul> -->
                 </td>
 
                 <!-- <td>{{$project->skill}}</td> -->
