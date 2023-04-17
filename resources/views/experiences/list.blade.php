@@ -21,11 +21,11 @@
                 <td>{{$experience->title}}</td>
                 <td>{{$experience->content}}</td>
                 <td>
-                    <ul>
+                    <!-- <ul>
                 <?php foreach ($skills as $skill): ?>
                         <li>{{$skill->title}}</li>
                 <?php endforeach; ?>
-                    <ul>
+                    <ul> -->
                 </td>
                 <td>{{ \Carbon\Carbon::parse($experience->learned_at)->format('d/m/Y ')}}</td>
                 <td>{{ \Carbon\Carbon::parse($experience->ended_at)->format('d/m/Y ')}}</td>
