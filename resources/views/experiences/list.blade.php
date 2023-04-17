@@ -23,7 +23,7 @@
                 <td>
                     <ul>
                 <?php foreach ($skills as $skill): ?>
-                        <li>{{$skill->title}}
+                        <li>{{$skill->title}}</li>
                 <?php endforeach; ?>
                     <ul>
                 </td>
