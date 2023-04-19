@@ -51,10 +51,13 @@ header i{
 }
 .btn a{
     text-decoration: none;
-    color: white;
+    color: white !important;
 }
 .btn i{
     padding-left: 0.3em;
+}
+.w3-padding p{
+    font-family: 'Raleway', sans-serif !important;
 }
 .w3-red.w3-center.w3-padding{
     text-align: center;
@@ -85,17 +88,17 @@ td li{
     min-width: 8.5em;
     
 }
-table a, table a:visited{
+table a, table a:visited, .w3-padding a, .w3-padding a:visited{
     color:brown;
     text-decoration: none;
     font-style: italic;
 }
-table a:hover{
+table a:hover, .w3-padding a:hover{
     color: rgb(255, 85, 85);
 }
 .w3-button.w3-green,.submit_btn{
     background-color: rgb(255, 85, 85);
-    color:white;
+    color:white !important;
     margin:1em;
     padding:0.5em 1em;
     text-decoration: none;
@@ -117,7 +120,16 @@ table a:hover{
 .w3-margin-bottom{
     padding:1em;
 }
-
+.w3-text-blue{
+    margin:0 ;
+    padding-left: 0 !important;
+    color: rgb(255, 85, 85);
+    font-family: 'Raleway', sans-serif;
+}
+footer{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
 
 
 

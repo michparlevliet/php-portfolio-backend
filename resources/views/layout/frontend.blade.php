@@ -28,7 +28,7 @@
 
 <footer class="w3-padding">
 
-    Footer Text | 
+    My Portfolio | 
     Copyright {{date('Y')}}
     <a href="#">Facebook</a> | 
     <a href="#">Instagram</a>
