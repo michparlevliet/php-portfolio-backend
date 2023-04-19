@@ -11,15 +11,16 @@ use App\Models\Type;
 use App\Models\ProjectSkill;
 use App\Models\Skill;
 
+
 class ProjectsController extends Controller
 {
-
     public function list()
     {
-    
+        
+
         return view('projects.list', [
-            'projects' => Project::all(),
-            // 'skills' => Skill::all()
+            'projects' => Project::all()
+           
         ]);
     }
 
@@ -36,7 +37,7 @@ class ProjectsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'slug' => 'nullable',
+            'slug' => 'required',
             // 'slug' => 'required|unique:projects|regex:/^[A-z\-]+$/',
             'url' => 'nullable|url',
             'content' => 'required',
@@ -79,11 +80,12 @@ class ProjectsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'slug' => [
-                'required',
-                Rule::unique('projects')->ignore($project->id),
-                'regex:/^[A-z\-]+$/',
-            ],
+            'slug' => 'required',
+            // 'slug' => [
+            //     'required',
+            //     Rule::unique('projects')->ignore($project->id),
+            //     'regex:/^[A-z\-]+$/',
+            // ],
             'url' => 'nullable|url',
             'content' => 'required',
             'type_id' => 'required',
@@ -97,6 +99,9 @@ class ProjectsController extends Controller
         $project->type_id = $attributes['type_id'];
         $project->save();
 
+        $project->projectSkills()->sync($attributes['skills']);
+
+        /*
         if(isset($attributes['skills']))
         {
             foreach($attributes['skills'] as $skill)
@@ -104,6 +109,7 @@ class ProjectsController extends Controller
                 $project->projectSkills()->attach($skill);
             }
         }
+        */
 
         return redirect('/console/projects/list')
             ->with('message', 'Project has been edited!');

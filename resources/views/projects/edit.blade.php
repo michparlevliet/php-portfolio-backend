@@ -73,11 +73,10 @@
             @foreach ($skills as $skill)
                 <br>    
                 <input type="checkbox" value="{{$skill->id}}" name="skills[]"
-                        {{$skill->id == old('skill_id') ? 'checked' : ''}}>
+                    {{$skill->id == old('skill_id') ? checked : ''}}>
                         {{$skill->title}}
                 <br>
             @endforeach
-
         </div>
 
         <button type="submit" class="w3-button w3-green">Edit Project</button>

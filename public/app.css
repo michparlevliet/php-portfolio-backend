@@ -81,6 +81,10 @@ header i{
     padding: 1em;
     border-bottom: 1px solid grey !important;
 }
+td li{
+    min-width: 8.5em;
+    
+}
 table a, table a:visited{
     color:brown;
     text-decoration: none;

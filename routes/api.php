@@ -7,6 +7,8 @@ use App\Models\Type;
 use App\Models\User;
 use App\Models\Experience;
 use App\Models\Project;
+use App\Models\skill;
+use App\Models\ProjectSkill;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/skills', function(){
 
-    $skills = Type::orderBy('title')->get();
+    $skills = Skill::orderBy('title')->get();
     return $skills;
 
 });
@@ -34,6 +36,13 @@ Route::get('/types', function(){
 
     $types = Type::orderBy('title')->get();
     return $types;
+
+});
+
+Route::get('/users', function(){
+
+    $users = User::orderBy('first')->get();
+    return $users;
 
 });
 
@@ -47,6 +56,7 @@ Route::get('/experiences', function(){
 Route::get('/projects', function(){
 
     $projects = Project::orderBy('created_at')->get();
+    
 
     foreach($projects as $key => $project)
     {
