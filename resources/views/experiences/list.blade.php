@@ -10,6 +10,7 @@
         <tr class="w3-red">
             <th>Title</th>
             <th>Content</th>
+            <th>Skills</th>
             <th>Start Date</th>
             <th>End Date</th>
             <th></th>
@@ -19,6 +20,13 @@
             <tr>
                 <td>{{$experience->title}}</td>
                 <td>{{$experience->content}}</td>
+                <td>
+                    <!-- <ul>
+                <?php foreach ($skills as $skill): ?>
+                        <li>{{$skill->title}}</li>
+                <?php endforeach; ?>
+                    <ul> -->
+                </td>
                 <td>{{ \Carbon\Carbon::parse($experience->learned_at)->format('d/m/Y ')}}</td>
                 <td>{{ \Carbon\Carbon::parse($experience->ended_at)->format('d/m/Y ')}}</td>
                 <td><a href="/console/experiences/edit/{{$experience->id}}">Edit</a></td>
