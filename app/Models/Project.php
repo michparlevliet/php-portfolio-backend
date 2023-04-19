@@ -44,4 +44,10 @@ class Project extends Model
     {
         return $this->belongsToMany(Skill::class);
     }
+
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class);
+    }
+
 }
