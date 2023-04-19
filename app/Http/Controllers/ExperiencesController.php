@@ -11,9 +11,14 @@ class ExperiencesController extends Controller
 {
     public function list()
     {
-        return view('experiences.list', [
-            'experiences' => Experience::all()
-        ]);
+        $skill = Skill::find(1);
+
+        foreach ($skill->experiences as $experience) {
+            return view('experiences.list', [
+                'experiences' => Experience::all(),
+                'skills'=> Skill::all()
+            ]);
+        }
     }
 
     public function addForm()
